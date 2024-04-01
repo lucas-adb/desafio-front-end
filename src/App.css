@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*
+  Styleguide
+*/
+:root {
+  font-family: "Roboto", sans-serif;
+  --black: #1C1C1C;
+  --gray-20: #9E9E9E;
+  --gray-10: #DFDFDF;
+  --gray-00: #F0F0F0;
+  --blue-light: #5A84C0;
+  --blue-dark: #594ED2;
+}
+
+/*
+  Headings
+*/
+.h1 {
+  font-weight: 500;
+  font-size: 24px;
+}
+.h2 {
+  font-weight: 500;
+  font-size: 16px;
+}
+.h3 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/*
+  Spacing
+*/
+.spacing-medium-80px {
+  margin-block: 80px;
+}
+
+.spacing-medium-60px {
+  margin-block: 60px;
+}
+
+.spacing-medium-40px {
+  margin-block: 40px;
+}
+
+.spacing-medium-32px {
+  margin-block: 32px;
+}
+
+.spacing-regular-28px {
+  margin-block: 28px;
+}
+
+.spacing-regular-20px {
+  margin-block: 20px;
+}
+
+.spacing-regular-16px {
+  margin-block: 16px;
+}
+
+.spacing-little-08px {
+  margin-block: 8px;
+}
+
+.spacing-little-04px {
+  margin-block: 4px;
+}
+
+/*
+  Headings
+*/
+.box-shadow-1 {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.box-shadow-2 {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/*
+  BEM
+*/
+.container {
+  width: 500px;
+  height: 500px;
+}
+
+.td__ellipse-div {
+  width: 8px;
+  height: 8px;
+  background-image: white;
+}

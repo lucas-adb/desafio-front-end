@@ -1,13 +1,13 @@
-import './App.css'
+import "./App.css";
 
 function App() {
   return (
     <>
-      <h1>
-        Bemobile - Teste técnico
-      </h1>
+      <div>
+        <h1 className="h1">Bemobile - Teste técnico</h1>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
