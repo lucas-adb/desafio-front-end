@@ -48,6 +48,8 @@
   border: none;
   background: transparent;
   border: none;
+
+  min-width: 32px;
 }
 
 .hidden-tr {
@@ -67,14 +69,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  width: 100%;
 }
 
 .table--mobile {
   border-collapse: collapse;
-  width: 335px;
+  /* width: 335px; */
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
+
+  width: 100%;
 }
 
 .table--mobile th, .table--mobile td {
@@ -130,4 +136,7 @@
   flex-direction: column;
   gap: 16px;
   padding: 16px;
+
+  width: 100%;
+  max-width: 1280px;
 }
