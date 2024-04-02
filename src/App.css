@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /*
   Styleguide
 */
 :root {
   font-family: "Roboto", sans-serif;
-  --black: #1C1C1C;
-  --gray-20: #9E9E9E;
-  --gray-10: #DFDFDF;
-  --gray-00: #F0F0F0;
-  --blue-light: #5A84C0;
-  --blue-dark: #594ED2;
+  --black: #1c1c1c;
+  --gray-20: #9e9e9e;
+  --gray-10: #dfdfdf;
+  --gray-00: #f0f0f0;
+  --blue-light: #5a84c0;
+  --blue-dark: #594ed2;
 }
 
 /*
@@ -30,46 +30,7 @@
 }
 
 /*
-  Spacing
-*/
-.spacing-medium-80px {
-  margin-block: 80px;
-}
-
-.spacing-medium-60px {
-  margin-block: 60px;
-}
-
-.spacing-medium-40px {
-  margin-block: 40px;
-}
-
-.spacing-medium-32px {
-  margin-block: 32px;
-}
-
-.spacing-regular-28px {
-  margin-block: 28px;
-}
-
-.spacing-regular-20px {
-  margin-block: 20px;
-}
-
-.spacing-regular-16px {
-  margin-block: 16px;
-}
-
-.spacing-little-08px {
-  margin-block: 8px;
-}
-
-.spacing-little-04px {
-  margin-block: 4px;
-}
-
-/*
-  Headings
+  Shadows
 */
 .box-shadow-1 {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
@@ -82,13 +43,69 @@
 /*
   BEM
 */
-.container {
-  width: 500px;
-  height: 500px;
+.chevron-container-btn {
+  background: transparent;
+  border: none;
+  background: transparent;
+  border: none;
 }
 
-.td__ellipse-div {
+.hidden-tr {
+  border-bottom: 1px dotted var(--gray-20);
+}
+
+.hidden-tr td {
+  padding: 16px 16px 0 16px;
+}
+
+.hidden-tr__div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table--mobile {
+  border-collapse: collapse;
+  width: 335px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table--mobile th, .table--mobile td {
+  padding: 16px;
+}
+
+.tbody--mobile {
+  text-align: center;
+}
+
+.tbody__profile-picture {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.thead--mobile {
+  background: linear-gradient(var(--blue-light), var(--blue-dark));
+  color: white;
+}
+
+.thead--mobile tr th:first-of-type {
+  text-align: left;
+}
+
+.th__ellipse-div {
   width: 8px;
   height: 8px;
-  background-image: white;
+  background: white;
+  border-radius: 50%;
+  margin-inline: auto;
 }
+
