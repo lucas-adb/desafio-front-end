@@ -1,10 +1,11 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
-import ChevronDownBlue from "./assets/icons/chevron-down-blue.svg";
-import ChevronUpBlue from "./assets/icons/chevron-up-blue.svg";
-import ProfilePhoto from "./assets/images/profile-test.png";
+// import ChevronDownBlue from "./assets/icons/chevron-down-blue.svg";
+// import ChevronUpBlue from "./assets/icons/chevron-up-blue.svg";
+// import ProfilePhoto from "./assets/images/profile-test.png";
 import SearchIcon from "./assets/icons/search-icon-gray.svg";
 import { Header } from "./components/Header";
+import { TableRowDesktop } from "./components/TableRowDesktop";
 import { TableRowMobile } from "./components/TableRowMobile";
 
 const test = {
@@ -18,7 +19,7 @@ const test = {
 };
 
 function App() {
-  const [showInfo, setShowInfo] = useState(false);
+  // const [showInfo, setShowInfo] = useState(false);
 
   return (
     <>
@@ -33,7 +34,6 @@ function App() {
             <img src={SearchIcon} alt="search-icon" />
           </div>
 
-          <div>
             <table className="table--mobile box-shadow-2">
               <thead className="thead--mobile box-shadow-1">
                 <tr>
@@ -46,11 +46,25 @@ function App() {
               </thead>
 
               <tbody className="tbody--mobile">
-
                 <TableRowMobile employee={test} />
               </tbody>
             </table>
-          </div>
+
+          <table className="table--desktop box-shadow-2">
+            <thead className="thead--desktop box-shadow-1">
+              <tr>
+                <th>FOTO</th>
+                <th>NOME</th>
+                <th>CARGO</th>
+                <th>DATA DE ADMISSÃO</th>
+                <th>TELEFONE</th>
+              </tr>
+            </thead>
+
+            <tbody className="tbody--desktop">
+              <TableRowDesktop employee={test} />
+            </tbody>
+          </table>
         </div>
       </main>
     </>

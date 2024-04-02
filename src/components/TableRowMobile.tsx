@@ -7,7 +7,7 @@ import { formatDate, formatPhone } from "../utils/formatData";
 export function TableRowMobile({ employee } : { employee: Employee }) {
   const [showInfo, setShowInfo] = useState(false);
 
-  console.log(employee);
+  // console.log(employee);
 
   return (
     <>
