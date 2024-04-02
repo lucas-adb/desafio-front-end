@@ -5,6 +5,17 @@ import ChevronUpBlue from "./assets/icons/chevron-up-blue.svg";
 import ProfilePhoto from "./assets/images/profile-test.png";
 import SearchIcon from "./assets/icons/search-icon-gray.svg";
 import { Header } from "./components/Header";
+import { TableRowMobile } from "./components/TableRowMobile";
+
+const test = {
+  id: 1,
+  name: "João",
+  job: "Back-end",
+  admission_date: "2019-12-02T00:00:00.000Z",
+  phone: "5551234567890",
+  image:
+    "https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg",
+};
 
 function App() {
   const [showInfo, setShowInfo] = useState(false);
@@ -35,58 +46,8 @@ function App() {
               </thead>
 
               <tbody className="tbody--mobile">
-                <tr>
-                  <td>
-                    <img
-                      src={ProfilePhoto}
-                      alt="profile-picture"
-                      className="tbody__profile-picture"
-                    />
-                  </td>
-                  <td>Giovana L. Arruda</td>
-                  <td>
-                    <button
-                      className="chevron-container-btn"
-                      onClick={() => setShowInfo((prevstate) => !prevstate)}
-                    >
-                      <img
-                        src={showInfo ? ChevronUpBlue : ChevronDownBlue}
-                        alt="chevron-down"
-                      />
-                    </button>
-                  </td>
-                </tr>
-                {showInfo && (
-                  <>
-                    <tr className="hidden-tr">
-                      <td colSpan={3}>
-                        <div className="hidden-tr__div">
-                          <p className="h2">Cargo:</p>
-                          <p>Front-end</p>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr className="hidden-tr">
-                      <td colSpan={3}>
-                        <div className="hidden-tr__div">
-                          <p className="h2">Data de admissão:</p>
-                          <p>00/00/0000</p>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr className="hidden-tr">
-                      <td colSpan={3}>
-                        <div className="hidden-tr__div">
-                          <p className="h2">Telefone:</p>
-                          <p>+55 (55) 55555-555</p>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr className="hidden-tr__empty-row">
-                      <td></td>
-                    </tr>
-                  </>
-                )}
+
+                <TableRowMobile employee={test} />
               </tbody>
             </table>
           </div>
