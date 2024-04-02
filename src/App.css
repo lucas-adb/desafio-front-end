@@ -182,7 +182,17 @@
 /*
   MEDIA QUERIES
 */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
+  .table--desktop {
+    display: table;
+  }
+
+  .table--mobile {
+    display: none;
+  }
+} */
+
+@media (min-width: 825px) {
   .table--desktop {
     display: table;
   }
