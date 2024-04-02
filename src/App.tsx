@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import ChevronDownBlue from "./assets/icons/chevron-down-blue.svg";
+import ChevronUpBlue from "./assets/icons/chevron-up-blue.svg";
 import ProfilePhoto from "./assets/images/profile-test.png";
 import SearchIcon from "./assets/icons/search-icon-gray.svg";
 import { Header } from "./components/Header";
@@ -48,7 +49,10 @@ function App() {
                       className="chevron-container-btn"
                       onClick={() => setShowInfo((prevstate) => !prevstate)}
                     >
-                      <img src={ChevronDownBlue} alt="chevron-down" />
+                      <img
+                        src={showInfo ? ChevronUpBlue : ChevronDownBlue}
+                        alt="chevron-down"
+                      />
                     </button>
                   </td>
                 </tr>
