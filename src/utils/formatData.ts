@@ -15,3 +15,10 @@ export function formatPhone(phone: string) {
 
   return newFormat;
 }
+
+export function formatDate(date: string) {
+  const data = new Date(date);
+  const newFormatData = data.toLocaleDateString('pt-BR');
+
+  return newFormatData;
+}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import ChevronDownBlue from "../assets/icons/chevron-down-blue.svg";
 import ChevronUpBlue from "../assets/icons/chevron-up-blue.svg";
 import { Employee } from "../types/employee";
-import { formatPhone } from "../utils/formatData";
+import { formatDate, formatPhone } from "../utils/formatData";
 
 export function TableRowMobile({ employee } : { employee: Employee }) {
   const [showInfo, setShowInfo] = useState(false);
@@ -14,7 +14,6 @@ export function TableRowMobile({ employee } : { employee: Employee }) {
       <tr key={employee.id}>
         <td>
           <img
-            // src={ProfilePhoto}
             src={employee.image}
             alt="profile-picture"
             className="tbody__profile-picture"
@@ -47,7 +46,7 @@ export function TableRowMobile({ employee } : { employee: Employee }) {
             <td colSpan={3}>
               <div className="hidden-tr__div">
                 <p className="h2">Data de admissão:</p>
-                <p>00/00/0000</p>
+                <p>{formatDate(employee.admission_date)}</p>
               </div>
             </td>
           </tr>
@@ -55,7 +54,6 @@ export function TableRowMobile({ employee } : { employee: Employee }) {
             <td colSpan={3}>
               <div className="hidden-tr__div">
                 <p className="h2">Telefone:</p>
-                {/* <p>+55 (55) 55555-555</p> */}
                 <p>{formatPhone(employee.phone)}</p>
               </div>
             </td>
