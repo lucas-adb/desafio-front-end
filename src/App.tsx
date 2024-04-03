@@ -5,18 +5,14 @@ import { Header } from "./components/Header";
 import { TableRowDesktop } from "./components/TableRowDesktop";
 import { TableRowMobile } from "./components/TableRowMobile";
 import { Employee } from "./types/employee";
-
-async function getEmployees(): Promise<Employee[]> {
-  const response = await fetch("http://localhost:3000/employees");
-  const data = await response.json();
-  return data;
-}
+import { filterEmployees } from "./utils/filterEmployees";
+import { getEmployees } from "./utils/fetchData";
 
 function App() {
   const [employees, setEmployees] = useState<Employee[] | null>(null);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-
     let ignore = false;
     setEmployees(null);
     getEmployees().then((result) => {
@@ -31,19 +27,25 @@ function App() {
   }, []);
 
   // console.log(employees);
+  // console.log(search);
 
   return (
     <>
       <Header />
 
       <main className="main">
-
         <div className="main__container">
           <div className="search-and-title-container">
             <h1 className="h1">Funcionários</h1>
 
             <div className="search-container">
-              <input type="text" placeholder="Pesquisar" className="h3" />
+              <input
+                type="text"
+                placeholder="Pesquisar"
+                className="h3"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
               <img src={SearchIcon} alt="search-icon" />
             </div>
           </div>
@@ -60,7 +62,7 @@ function App() {
             </thead>
 
             <tbody className="tbody--mobile">
-            {!employees ? (
+              {!employees ? (
                 <tr>
                   <td>Carregando...</td>
                 </tr>
@@ -89,9 +91,11 @@ function App() {
                   <td>Carregando...</td>
                 </tr>
               ) : (
-                employees.map((e) => {
-                  return <TableRowDesktop key={e.id} employee={e} />;
-                })
+                employees
+                  .filter((e) => filterEmployees(e, search))
+                  .map((e) => {
+                    return <TableRowDesktop key={e.id} employee={e} />;
+                  })
               )}
             </tbody>
           </table>
