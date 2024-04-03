@@ -8,6 +8,7 @@ import { Employee } from "./types/employee";
 import { filterEmployees } from "./utils/filterEmployees";
 import { getEmployees } from "./utils/fetchData";
 import { TableDesktop } from "./components/TableDesktop";
+import { TableMobile } from "./components/TableMobile";
 
 function App() {
   const [employees, setEmployees] = useState<Employee[] | null>(null);
@@ -26,9 +27,6 @@ function App() {
       ignore = true;
     };
   }, []);
-
-  // console.log(employees);
-  // console.log(search);
 
   return (
     <>
@@ -51,29 +49,17 @@ function App() {
             </div>
           </div>
 
-          <table className="table--mobile box-shadow-2">
-            <thead className="thead--mobile box-shadow-1">
+          <TableMobile>
+            {!employees ? (
               <tr>
-                <th>FOTO</th>
-                <th>NOME</th>
-                <th>
-                  <div className="th__ellipse-div"></div>
-                </th>
+                <td>Carregando...</td>
               </tr>
-            </thead>
-
-            <tbody className="tbody--mobile">
-              {!employees ? (
-                <tr>
-                  <td>Carregando...</td>
-                </tr>
-              ) : (
-                employees.map((e) => {
-                  return <TableRowMobile key={e.id} employee={e} />;
-                })
-              )}
-            </tbody>
-          </table>
+            ) : (
+              employees.map((e) => {
+                return <TableRowMobile key={e.id} employee={e} />;
+              })
+            )}
+          </TableMobile>
 
           <TableDesktop>
             {!employees ? (
