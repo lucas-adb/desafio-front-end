@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 
-interface TableDesktopProps extends ComponentProps<'table'> {}
+interface TableDesktopProps extends ComponentProps<"table"> {}
 
 export function TableDesktop(props: TableDesktopProps) {
   return (

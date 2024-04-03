@@ -178,7 +178,7 @@
 }
 
 .tbody--desktop tr {
-  border: 1px dotted var(--gray-20)
+  border-bottom: 1px dotted var(--gray-20);
 }
 
 .tbody--desktop tr:last-of-type {

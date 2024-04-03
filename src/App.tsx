@@ -29,6 +29,10 @@ function App() {
     };
   }, []);
 
+  const filteredEmployees = employees?.filter((e) =>
+    filterEmployees(e, search)
+  );
+
   return (
     <>
       <Header />
@@ -43,24 +47,20 @@ function App() {
             />
           </div>
 
-          {!employees ? (
+          {!filteredEmployees ? (
             <Loading />
           ) : (
             <>
               <TableMobile>
-                {employees
-                  .filter((e) => filterEmployees(e, search))
-                  .map((e) => {
-                    return <TableRowMobile key={e.id} employee={e} />;
-                  })}
+                {filteredEmployees.map((e) => {
+                  return <TableRowMobile key={e.id} employee={e} />;
+                })}
               </TableMobile>
 
               <TableDesktop>
-                {employees
-                  .filter((e) => filterEmployees(e, search))
-                  .map((e) => {
-                    return <TableRowDesktop key={e.id} employee={e} />;
-                  })}
+                {filteredEmployees.map((e) => {
+                  return <TableRowDesktop key={e.id} employee={e} />;
+                })}
               </TableDesktop>
             </>
           )}
