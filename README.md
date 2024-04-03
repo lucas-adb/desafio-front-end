@@ -24,12 +24,12 @@ Este projeto foi feito para o teste técnico em front-end da Be. Consiste em uma
 1) Faça o git clone do projeto:
 
 ``` shell
-git clone <nome-do-projeto>
+git clone git@github.com:lucas-adb/desafio-front-end.git
 ```
 
 2) Entre na pasta do projeto:
 ``` shell
-cd <nome-do-projeto>
+cd desafio-front-end
 ```
 
 3) Instale as dependências:
