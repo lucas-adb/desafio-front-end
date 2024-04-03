@@ -1,8 +1,4 @@
-// import { useState } from "react";
 import "./App.css";
-// import ChevronDownBlue from "./assets/icons/chevron-down-blue.svg";
-// import ChevronUpBlue from "./assets/icons/chevron-up-blue.svg";
-// import ProfilePhoto from "./assets/images/profile-test.png";
 import SearchIcon from "./assets/icons/search-icon-gray.svg";
 import { Header } from "./components/Header";
 import { TableRowDesktop } from "./components/TableRowDesktop";
@@ -19,36 +15,36 @@ const test = {
 };
 
 function App() {
-  // const [showInfo, setShowInfo] = useState(false);
-
   return (
     <>
       <Header />
 
       <main className="main">
         <div className="main__container">
-          <h1 className="h1">Funcionários</h1>
+          <div className="search-and-title-container">
+            <h1 className="h1">Funcionários</h1>
 
-          <div className="search-container box-shadow-2">
-            <input type="text" placeholder="Pesquisar" className="h3" />
-            <img src={SearchIcon} alt="search-icon" />
+            <div className="search-container">
+              <input type="text" placeholder="Pesquisar" className="h3" />
+              <img src={SearchIcon} alt="search-icon" />
+            </div>
           </div>
 
-            <table className="table--mobile box-shadow-2">
-              <thead className="thead--mobile box-shadow-1">
-                <tr>
-                  <th>FOTO</th>
-                  <th>NOME</th>
-                  <th>
-                    <div className="th__ellipse-div"></div>
-                  </th>
-                </tr>
-              </thead>
+          <table className="table--mobile box-shadow-2">
+            <thead className="thead--mobile box-shadow-1">
+              <tr>
+                <th>FOTO</th>
+                <th>NOME</th>
+                <th>
+                  <div className="th__ellipse-div"></div>
+                </th>
+              </tr>
+            </thead>
 
-              <tbody className="tbody--mobile">
-                <TableRowMobile employee={test} />
-              </tbody>
-            </table>
+            <tbody className="tbody--mobile">
+              <TableRowMobile employee={test} />
+            </tbody>
+          </table>
 
           <table className="table--desktop box-shadow-2">
             <thead className="thead--desktop box-shadow-1">
