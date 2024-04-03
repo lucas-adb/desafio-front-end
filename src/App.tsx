@@ -7,6 +7,7 @@ import { TableRowMobile } from "./components/TableRowMobile";
 import { Employee } from "./types/employee";
 import { filterEmployees } from "./utils/filterEmployees";
 import { getEmployees } from "./utils/fetchData";
+import { TableDesktop } from "./components/TableDesktop";
 
 function App() {
   const [employees, setEmployees] = useState<Employee[] | null>(null);
@@ -74,31 +75,19 @@ function App() {
             </tbody>
           </table>
 
-          <table className="table--desktop box-shadow-2">
-            <thead className="thead--desktop box-shadow-1">
+          <TableDesktop>
+            {!employees ? (
               <tr>
-                <th>FOTO</th>
-                <th>NOME</th>
-                <th>CARGO</th>
-                <th>DATA DE ADMISSÃO</th>
-                <th>TELEFONE</th>
+                <td>Carregando...</td>
               </tr>
-            </thead>
-
-            <tbody className="tbody--desktop">
-              {!employees ? (
-                <tr>
-                  <td>Carregando...</td>
-                </tr>
-              ) : (
-                employees
-                  .filter((e) => filterEmployees(e, search))
-                  .map((e) => {
-                    return <TableRowDesktop key={e.id} employee={e} />;
-                  })
-              )}
-            </tbody>
-          </table>
+            ) : (
+              employees
+                .filter((e) => filterEmployees(e, search))
+                .map((e) => {
+                  return <TableRowDesktop key={e.id} employee={e} />;
+                })
+            )}
+          </TableDesktop>
         </div>
       </main>
     </>
