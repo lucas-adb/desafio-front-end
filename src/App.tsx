@@ -9,6 +9,7 @@ import { filterEmployees } from "./utils/filterEmployees";
 import { getEmployees } from "./utils/fetchData";
 import { TableDesktop } from "./components/TableDesktop";
 import { TableMobile } from "./components/TableMobile";
+import { Loading } from "./components/Loading";
 
 function App() {
   const [employees, setEmployees] = useState<Employee[] | null>(null);
@@ -49,31 +50,27 @@ function App() {
             </div>
           </div>
 
-          <TableMobile>
-            {!employees ? (
-              <tr>
-                <td>Carregando...</td>
-              </tr>
-            ) : (
-              employees.map((e) => {
-                return <TableRowMobile key={e.id} employee={e} />;
-              })
-            )}
-          </TableMobile>
+          {!employees ? (
+            <Loading />
+          ) : (
+            <>
+              <TableMobile>
+                {employees
+                  .filter((e) => filterEmployees(e, search))
+                  .map((e) => {
+                    return <TableRowMobile key={e.id} employee={e} />;
+                  })}
+              </TableMobile>
 
-          <TableDesktop>
-            {!employees ? (
-              <tr>
-                <td>Carregando...</td>
-              </tr>
-            ) : (
-              employees
-                .filter((e) => filterEmployees(e, search))
-                .map((e) => {
-                  return <TableRowDesktop key={e.id} employee={e} />;
-                })
-            )}
-          </TableDesktop>
+              <TableDesktop>
+                {employees
+                  .filter((e) => filterEmployees(e, search))
+                  .map((e) => {
+                    return <TableRowDesktop key={e.id} employee={e} />;
+                  })}
+              </TableDesktop>
+            </>
+          )}
         </div>
       </main>
     </>

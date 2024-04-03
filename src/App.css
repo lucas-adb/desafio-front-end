@@ -211,3 +211,8 @@
     margin-block: 40px;
   }
 }
+ 
+.loading-container {
+  display: flex;
+  justify-content: center;
+}
