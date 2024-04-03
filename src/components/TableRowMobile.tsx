@@ -11,7 +11,7 @@ export function TableRowMobile({ employee } : { employee: Employee }) {
 
   return (
     <>
-      <tr key={employee.id}>
+      <tr>
         <td>
           <img
             src={employee.image}

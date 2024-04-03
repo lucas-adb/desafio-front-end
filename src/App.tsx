@@ -1,25 +1,43 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import SearchIcon from "./assets/icons/search-icon-gray.svg";
 import { Header } from "./components/Header";
 import { TableRowDesktop } from "./components/TableRowDesktop";
 import { TableRowMobile } from "./components/TableRowMobile";
+import { Employee } from "./types/employee";
 
-const test = {
-  id: 1,
-  name: "João",
-  job: "Back-end",
-  admission_date: "2019-12-02T00:00:00.000Z",
-  phone: "5551234567890",
-  image:
-    "https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg",
-};
+async function getEmployees(): Promise<Employee[]> {
+  const response = await fetch("http://localhost:3000/employees");
+  const data = await response.json();
+  return data;
+}
 
 function App() {
+  const [employees, setEmployees] = useState<Employee[] | null>(null);
+
+  useEffect(() => {
+
+    let ignore = false;
+    setEmployees(null);
+    getEmployees().then((result) => {
+      if (!ignore) {
+        setEmployees(result);
+      }
+    });
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
+
+  // console.log(employees);
+
   return (
     <>
       <Header />
 
       <main className="main">
+
         <div className="main__container">
           <div className="search-and-title-container">
             <h1 className="h1">Funcionários</h1>
@@ -42,7 +60,15 @@ function App() {
             </thead>
 
             <tbody className="tbody--mobile">
-              <TableRowMobile employee={test} />
+            {!employees ? (
+                <tr>
+                  <td>Carregando...</td>
+                </tr>
+              ) : (
+                employees.map((e) => {
+                  return <TableRowMobile key={e.id} employee={e} />;
+                })
+              )}
             </tbody>
           </table>
 
@@ -58,7 +84,15 @@ function App() {
             </thead>
 
             <tbody className="tbody--desktop">
-              <TableRowDesktop employee={test} />
+              {!employees ? (
+                <tr>
+                  <td>Carregando...</td>
+                </tr>
+              ) : (
+                employees.map((e) => {
+                  return <TableRowDesktop key={e.id} employee={e} />;
+                })
+              )}
             </tbody>
           </table>
         </div>

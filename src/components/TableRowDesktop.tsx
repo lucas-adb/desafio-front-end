@@ -4,7 +4,7 @@ import { formatDate, formatPhone } from "../utils/formatData";
 export function TableRowDesktop({ employee }: { employee: Employee }) {
   return (
     <>
-      <tr key={employee.id}>
+      <tr>
         <td>
           <img
             src={employee.image}
