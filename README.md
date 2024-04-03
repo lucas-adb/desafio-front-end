@@ -1,7 +1,7 @@
 # Teste Técnico Front-end Be
 
 ## Sobre
-Este projeto foi feito para o teste técnico em front-end da Be. Consiste em uma tabela com dados de funcionários que virão de uma API simulada, em json-server.
+Este projeto foi feito para o teste técnico em front-end da Be. Consiste em uma tabela com dados de funcionários que virão de uma API simulada, em json-server. O readme oficial do projeto está [aqui](tech-test.md).
 
 ## Pré-requisitos
 - ✅ Deve-se utilizar React.js ou Vanilla JS (JavaScript puro) para construir o projeto. -> React.js
