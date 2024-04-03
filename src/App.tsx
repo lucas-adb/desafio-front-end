@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import SearchIcon from "./assets/icons/search-icon-gray.svg";
 import { Header } from "./components/Header";
 import { TableRowDesktop } from "./components/TableRowDesktop";
 import { TableRowMobile } from "./components/TableRowMobile";
@@ -10,6 +9,7 @@ import { getEmployees } from "./utils/fetchData";
 import { TableDesktop } from "./components/TableDesktop";
 import { TableMobile } from "./components/TableMobile";
 import { Loading } from "./components/Loading";
+import { SearchInput } from "./components/SearchInput";
 
 function App() {
   const [employees, setEmployees] = useState<Employee[] | null>(null);
@@ -32,22 +32,15 @@ function App() {
   return (
     <>
       <Header />
-
       <main className="main">
         <div className="main__container">
           <div className="search-and-title-container">
             <h1 className="h1">Funcionários</h1>
 
-            <div className="search-container">
-              <input
-                type="text"
-                placeholder="Pesquisar"
-                className="h3"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-              <img src={SearchIcon} alt="search-icon" />
-            </div>
+            <SearchInput
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </div>
 
           {!employees ? (
