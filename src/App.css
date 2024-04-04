@@ -185,6 +185,10 @@
   color: white;
 }
 
+.thead--desktop tr th, .thead--mobile tr th {
+  font-weight: 400; 
+}
+
 .thead--mobile {
   background: linear-gradient(var(--blue-light), var(--blue-dark));
   color: white;
@@ -211,6 +215,10 @@
     flex-direction: row;
     align-items: center;
     margin-block: 40px;
+  }
+
+  .search-container {
+    min-width: 287;
   }
 
   .table--desktop {
