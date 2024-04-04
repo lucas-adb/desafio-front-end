@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import { Header } from "./components/Header";
-import { TableRowDesktop } from "./components/table/TableRowDesktop";
-import { TableRowMobile } from "./components/table/TableRowMobile";
+import { useEffect, useState } from "react";
 import { Employee } from "./types/employee";
 import { filterEmployees } from "./utils/filterEmployees";
 import { getEmployees } from "./utils/fetchData";
+import { Header } from "./components/Header";
+import { TableRowDesktop } from "./components/table/TableRowDesktop";
+import { TableRowMobile } from "./components/table/TableRowMobile";
 import { TableDesktop } from "./components/table/TableDesktop";
 import { TableMobile } from "./components/table/TableMobile";
 import { Loading } from "./components/Loading";
@@ -13,17 +13,25 @@ import { SearchInput } from "./components/SearchInput";
 import { EmployeeNotFound } from "./components/EmployeeNotFound";
 
 function App() {
-  const [employees, setEmployees] = useState<Employee[] | null>(null);
+  const [employees, setEmployees] = useState<Employee[]>([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    let ignore = false;
-    setEmployees(null);
-    getEmployees().then((result) => {
-      if (!ignore) {
-        setEmployees(result);
+    async function startFetching() {
+      try {
+        setEmployees([]);
+        const result = await getEmployees();
+        if (!ignore) {
+          setEmployees(result);
+        }
+      } catch (error) {
+        console.error(error);
       }
-    });
+    }
+
+    let ignore = false;
+
+    startFetching();
 
     return () => {
       ignore = true;

@@ -14,7 +14,6 @@ export function TableDesktop(props: TableDesktopProps) {
           <th>TELEFONE</th>
         </tr>
       </thead>
-
       <tbody className="tbody--desktop">{props.children}</tbody>
     </table>
   );

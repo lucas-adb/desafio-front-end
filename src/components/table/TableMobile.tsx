@@ -14,10 +14,7 @@ export function TableMobile(props: TableMobileProps) {
           </th>
         </tr>
       </thead>
-
-      <tbody className="tbody--mobile">
-        {props.children}
-      </tbody>
+      <tbody className="tbody--mobile">{props.children}</tbody>
     </table>
   );
 }

@@ -45,12 +45,17 @@ npm i
 
 3) Rode o JSON Server:
 ``` shell
-npx json-server database/db.json
+npm run server
 ```
 
 4) Rode a aplicação
 ``` shell
 npm run dev
+```
+
+5) Para rodar os testes 🧪:
+``` shell
+npm test
 ```
 
 ## Preview 📸
