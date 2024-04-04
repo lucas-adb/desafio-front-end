@@ -13,17 +13,40 @@ import { SearchInput } from "./components/SearchInput";
 import { EmployeeNotFound } from "./components/EmployeeNotFound";
 
 function App() {
-  const [employees, setEmployees] = useState<Employee[] | null>(null);
+  // const [employees, setEmployees] = useState<Employee[] | null>(null);
+  const [employees, setEmployees] = useState<Employee[]>([]);
   const [search, setSearch] = useState("");
 
+  // useEffect(() => {
+  //   let ignore = false;
+  //   setEmployees([]);
+  //   getEmployees().then((result) => {
+  //     if (!ignore) {
+  //       setEmployees(result);
+  //     }
+  //   });
+
+  //   return () => {
+  //     ignore = true;
+  //   };
+  // }, []);
+
   useEffect(() => {
-    let ignore = false;
-    setEmployees(null);
-    getEmployees().then((result) => {
-      if (!ignore) {
-        setEmployees(result);
+    async function startFetching() {
+      try {
+        setEmployees([]);
+        const result = await getEmployees();
+        if (!ignore) {
+          setEmployees(result);
+        }
+      } catch (error) {
+        console.error(error);
       }
-    });
+    }
+
+    let ignore = false;
+
+    startFetching();
 
     return () => {
       ignore = true;
