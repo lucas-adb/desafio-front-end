@@ -175,8 +175,8 @@
 
 .tbody__profile-picture {
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
   object-fit: cover;
 }
 
@@ -199,8 +199,8 @@
 }
 
 .th__ellipse-div {
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
   background: white;
   border-radius: 50%;
   margin-inline: auto;
