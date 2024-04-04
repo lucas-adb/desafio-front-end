@@ -52,6 +52,7 @@
   background: transparent;
   border: none;
   min-width: 32px;
+  cursor: pointer;
 }
 
 .header {
@@ -158,6 +159,10 @@
 
 .tbody--desktop tr {
   border-bottom: 1px dotted var(--gray-20);
+}
+
+.tbody--desktop tr:hover, .tbody--mobile tr:hover {
+  background-color: var(--gray-00);
 }
 
 .tbody--desktop tr:last-of-type {
