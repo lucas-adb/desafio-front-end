@@ -1,5 +1,5 @@
-import { Employee } from "../types/employee";
-import { formatDate, formatPhone } from "../utils/formatData";
+import { Employee } from "../../types/employee";
+import { formatDate, formatPhone } from "../../utils/formatData";
 
 export function TableRowDesktop({ employee }: { employee: Employee }) {
   return (
