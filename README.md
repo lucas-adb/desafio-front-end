@@ -53,6 +53,11 @@ npm run server
 npm run dev
 ```
 
+5) Para rodar os testes:
+``` shell
+npm test
+```
+
 ## Preview 📸
 ![desktop page](public/be-01.jpeg)
 ![desktop page with search](public/be-02.jpeg)

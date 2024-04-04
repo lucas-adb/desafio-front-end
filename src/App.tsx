@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import { Header } from "./components/Header";
-import { TableRowDesktop } from "./components/table/TableRowDesktop";
-import { TableRowMobile } from "./components/table/TableRowMobile";
+import { useEffect, useState } from "react";
 import { Employee } from "./types/employee";
 import { filterEmployees } from "./utils/filterEmployees";
 import { getEmployees } from "./utils/fetchData";
+import { Header } from "./components/Header";
+import { TableRowDesktop } from "./components/table/TableRowDesktop";
+import { TableRowMobile } from "./components/table/TableRowMobile";
 import { TableDesktop } from "./components/table/TableDesktop";
 import { TableMobile } from "./components/table/TableMobile";
 import { Loading } from "./components/Loading";

@@ -18,11 +18,11 @@ export function formatPhone(phone: string) {
 
 export function formatDate(date: string) {
   const data = new Date(date);
-  const newFormatData = data.toLocaleDateString('pt-BR');
+  const newFormatData = data.toLocaleDateString("pt-BR");
 
   return newFormatData;
 }
 
 export function removeAccents(str: string) {
-  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
