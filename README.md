@@ -20,16 +20,22 @@ Este projeto foi feito para o teste técnico em front-end da Be. Consiste em uma
 
 - ✅ Usar TypeScript
 
+## TechStack 🔧
+- React ⚛️ 
+- Vite ⚡ 
+- CSS 🎨 
+- Cypress 🧪 
+
 ## Instruções para rodar a aplicação
 1) Faça o git clone do projeto:
 
 ``` shell
-git clone <nome-do-projeto>
+git clone git@github.com:lucas-adb/desafio-front-end.git
 ```
 
 2) Entre na pasta do projeto:
 ``` shell
-cd <nome-do-projeto>
+cd desafio-front-end
 ```
 
 3) Instale as dependências:
@@ -46,3 +52,8 @@ npx json-server database/db.json
 ``` shell
 npm run dev
 ```
+
+## Preview 📸
+![desktop page](public/be-01.jpeg)
+![desktop page with search](public/be-02.jpeg)
+![mobile page](public/be-03.jpeg)

@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
-import { TableRowDesktop } from "./components/TableRowDesktop";
-import { TableRowMobile } from "./components/TableRowMobile";
+import { TableRowDesktop } from "./components/table/TableRowDesktop";
+import { TableRowMobile } from "./components/table/TableRowMobile";
 import { Employee } from "./types/employee";
 import { filterEmployees } from "./utils/filterEmployees";
 import { getEmployees } from "./utils/fetchData";
-import { TableDesktop } from "./components/TableDesktop";
-import { TableMobile } from "./components/TableMobile";
+import { TableDesktop } from "./components/table/TableDesktop";
+import { TableMobile } from "./components/table/TableMobile";
 import { Loading } from "./components/Loading";
 import { SearchInput } from "./components/SearchInput";
+import { EmployeeNotFound } from "./components/EmployeeNotFound";
 
 function App() {
   const [employees, setEmployees] = useState<Employee[] | null>(null);
@@ -64,6 +65,8 @@ function App() {
               </TableDesktop>
             </>
           )}
+
+          {filteredEmployees?.length === 0 && <EmployeeNotFound />}
         </div>
       </main>
     </>

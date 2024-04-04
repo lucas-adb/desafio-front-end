@@ -12,6 +12,7 @@ export function SearchInput(props: SearchInputProps) {
           type="text"
           placeholder="Pesquisar"
           className="h3"
+          id="search-input"
         />
         <img src={SearchIcon} alt="search-icon" />
       </div>

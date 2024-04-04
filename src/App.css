@@ -52,6 +52,7 @@
   background: transparent;
   border: none;
   min-width: 32px;
+  cursor: pointer;
 }
 
 .header {
@@ -91,6 +92,12 @@
   width: 100%;
   max-width: 1280px;
   padding: 16px 20px;
+}
+
+.not-found-container {
+  margin-inline: auto;
+  margin-top: 16px;
+  color: var(--gray-20);
 }
 
 .search-and-title-container {
@@ -154,6 +161,10 @@
   border-bottom: 1px dotted var(--gray-20);
 }
 
+.tbody--desktop tr:hover, .tbody--mobile tr:hover {
+  background-color: var(--gray-00);
+}
+
 .tbody--desktop tr:last-of-type {
   border: none;
 }
@@ -172,6 +183,10 @@
 .thead--desktop {
   background: linear-gradient(var(--blue-light), var(--blue-dark));
   color: white;
+}
+
+.thead--desktop tr th, .thead--mobile tr th {
+  font-weight: 400; 
 }
 
 .thead--mobile {
@@ -200,6 +215,10 @@
     flex-direction: row;
     align-items: center;
     margin-block: 40px;
+  }
+
+  .search-container {
+    min-width: 287;
   }
 
   .table--desktop {

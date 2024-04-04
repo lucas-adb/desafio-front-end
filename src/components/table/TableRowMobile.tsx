@@ -1,8 +1,8 @@
 import { useState } from "react";
-import ChevronDownBlue from "../assets/icons/chevron-down-blue.svg";
-import ChevronUpBlue from "../assets/icons/chevron-up-blue.svg";
-import { Employee } from "../types/employee";
-import { formatDate, formatPhone } from "../utils/formatData";
+import ChevronDownBlue from "../../assets/icons/chevron-down-blue.svg";
+import ChevronUpBlue from "../../assets/icons/chevron-up-blue.svg";
+import { Employee } from "../../types/employee";
+import { formatDate, formatPhone } from "../../utils/formatData";
 
 export function TableRowMobile({ employee } : { employee: Employee }) {
   const [showInfo, setShowInfo] = useState(false);
