@@ -45,7 +45,7 @@ npm i
 
 3) Rode o JSON Server:
 ``` shell
-npx json-server database/db.json
+npm run server
 ```
 
 4) Rode a aplicação
