@@ -100,5 +100,8 @@ describe('HOME', () => {
 
     cy.get('.table--desktop').find('td').should('have.length', 0)
     // :(
+
+    cy.get('#not-found').should('be.visible')
+      .contains('Ops...Nenhum funcionário encontrado')
   })
 })
