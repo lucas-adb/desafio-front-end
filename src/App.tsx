@@ -10,6 +10,7 @@ import { TableDesktop } from "./components/TableDesktop";
 import { TableMobile } from "./components/TableMobile";
 import { Loading } from "./components/Loading";
 import { SearchInput } from "./components/SearchInput";
+import { EmployeeNotFound } from "./components/EmployeeNotFound";
 
 function App() {
   const [employees, setEmployees] = useState<Employee[] | null>(null);
@@ -32,6 +33,8 @@ function App() {
   const filteredEmployees = employees?.filter((e) =>
     filterEmployees(e, search)
   );
+
+  console.log(filteredEmployees);
 
   return (
     <>
@@ -64,6 +67,8 @@ function App() {
               </TableDesktop>
             </>
           )}
+
+          {filteredEmployees?.length === 0 && <EmployeeNotFound />}
         </div>
       </main>
     </>
