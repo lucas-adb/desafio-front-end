@@ -53,7 +53,7 @@ npm run server
 npm run dev
 ```
 
-5) Para rodar os testes:
+5) Para rodar os testes 🧪:
 ``` shell
 npm test
 ```
